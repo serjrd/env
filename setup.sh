@@ -21,19 +21,19 @@ done
 
 
 # update zsh:
-if [ -d ~/.oh-my-zsh ]; then
+if [ ! -d ~/.oh-my-zsh ]; then
 	echo "Getting oh-my-zsh"
 	wget --no-check-certificate http://install.ohmyz.sh -O - | sh
 fi
 
-if [ -d ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting ]; then
+if [ ! -d ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting ]; then
 	echo "Fetching syntax-highlight"
 	cd ~/.oh-my-zsh/custom/plugins && git clone git://github.com/zsh-users/zsh-syntax-highlighting.git
 fi
 
 echo "Setting up the custom theme"
 mkdir ~/.oh-my-zsh/custom/themes
-cp ./serjrd.zsh-theme ~/.oh-my-zsh/custom/themes
+cp serjrd.zsh-theme ~/.oh-my-zsh/custom/themes
 
 echo "Updating ~/.zshrc"
 sed -ir 's/^[# ]*ZSH_THEME=.*$/ZSH_THEME="serjrd"/g' ~/.zshrc
