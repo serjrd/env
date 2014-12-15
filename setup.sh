@@ -3,13 +3,13 @@
 # This script sets up the working environment to my liking
 
 # aptitude:
-if !dpkg -s "aptitude" >/dev/null 2>&1; then
+if ! dpkg -s "aptitude" >/dev/null 2>&1; then
 	echo "Installing aptitude"
 	sudo apt-get install aptitude
 fi
 
 # Install the soft that we need:
-SOFT="nodejs git zsh"
+SOFT="nodejs git zsh ack-grep"
 for pkg in $SOFT; do
 	if dpkg -s "$pkg" >/dev/null 2>&1; then
 		echo "$pkg is installed. OK."
@@ -33,11 +33,17 @@ fi
 
 echo "Setting up the custom theme"
 mkdir ~/.oh-my-zsh/custom/themes
-cp serjrd.zsh-theme ~/.oh-my-zsh/custom/themes
+cp ./serjrd.zsh-theme ~/.oh-my-zsh/custom/themes
 
 echo "Updating ~/.zshrc"
 sed -ir 's/^[# ]*ZSH_THEME=.*$/ZSH_THEME="serjrd"/g' ~/.zshrc
 sed -ir 's/^plugins=.*/plugins=(git zsh-syntax-highlighting)/g' ~/.zshrc
+
+if ! egrep "^alias" ~/.zshrc > /dev/null; then
+	echo "Adding aliases"
+	echo 'alias more="less"' >> ~/.zshrc
+	echo 'alias ack="ack-grep"' >> ~/.zshrc
+fi
 
 echo "Setting zsh to be the default shell"
 sudo chsh -s /bin/zsh
