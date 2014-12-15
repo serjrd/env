@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # This script sets up the working environment to my liking
 
@@ -32,8 +32,11 @@ if [ ! -d ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting ]; then
 fi
 
 echo "Setting up the custom theme"
-mkdir ~/.oh-my-zsh/custom/themes
-cp ./serjrd.zsh-theme ~/.oh-my-zsh/custom/themes
+if [ ! -d ~/.oh-my-zsh/custom/themes ]; then
+	mkdir ~/.oh-my-zsh/custom/themes
+fi
+DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+cp $DIR/serjrd.zsh-theme ~/.oh-my-zsh/custom/themes
 
 echo "Updating ~/.zshrc"
 sed -ir 's/^[# ]*ZSH_THEME=.*$/ZSH_THEME="serjrd"/g' ~/.zshrc
