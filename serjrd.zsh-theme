@@ -10,10 +10,10 @@ function my_git_prompt_info() {
   echo "$ZSH_THEME_GIT_PROMPT_PREFIX${ref#refs/heads/}$GIT_STATUS$ZSH_THEME_GIT_PROMPT_SUFFIX"
 }
 
-PROMPT='%(!.%{$fg_bold[red]%}%n%{$reset_color%}.%{$fg[green]%}%n%{$reset_color%})%{$fg_bold[green]%}@%m%{$reset_color%} %{$fg_bold[blue]%}%2~%{$reset_color%} $(my_git_prompt_info) %B%#%b '
+PROMPT='%(!.%{$fg_bold[red]%}%n%{$reset_color%}.%{$fg[green]%}%n%{$reset_color%})%{$fg_bold[green]%}@%m%{$reset_color%} %{$fg_bold[blue]%}%2~%{$reset_color%}$(my_git_prompt_info) %B%#%b '
 RPS1="${return_code} %{$fg[blue]%}[%*]%{$reset_color%}"
 
-ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[yellow]%}("
+ZSH_THEME_GIT_PROMPT_PREFIX=" %{$fg[yellow]%}("
 ZSH_THEME_GIT_PROMPT_SUFFIX=")%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_UNTRACKED="%%"
 ZSH_THEME_GIT_PROMPT_ADDED="+"
