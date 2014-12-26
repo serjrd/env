@@ -40,7 +40,7 @@ cp $DIR/serjrd.zsh-theme ~/.oh-my-zsh/custom/themes
 
 echo "Updating ~/.zshrc"
 sed -ir 's/^[# ]*ZSH_THEME=.*$/ZSH_THEME="serjrd"/g' ~/.zshrc
-sed -ir 's/^plugins=.*/plugins=(git zsh-syntax-highlighting)/g' ~/.zshrc
+sed -ir 's/^plugins=.*/plugins=(command-not-found git zsh-syntax-highlighting)/g' ~/.zshrc
 
 if ! egrep "^alias" ~/.zshrc > /dev/null; then
 	echo "Adding aliases"
