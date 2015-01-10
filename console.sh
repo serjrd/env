@@ -9,7 +9,7 @@ if ! dpkg -s "aptitude" >/dev/null 2>&1; then
 fi
 
 # Install the soft that we need:
-SOFT="nodejs git zsh ack-grep"
+SOFT="nodejs npm git zsh ack-grep"
 for pkg in $SOFT; do
 	if dpkg -s "$pkg" >/dev/null 2>&1; then
 		echo "$pkg is installed. OK."
@@ -18,6 +18,9 @@ for pkg in $SOFT; do
 		sudo aptitude install $pkg
 	fi
 done
+
+# nodejs -> node
+ln -s /usr/bin/nodejs /usr/bin/node
 
 
 # update zsh:

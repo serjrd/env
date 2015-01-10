@@ -3,6 +3,10 @@
 # This script sets up the desktop environment to my liking
 # If it's the first time - run the 'console.sh' script first
 
+# Add some custom repositories:
+sudo add-apt-repository ppa:peterlevi/ppa
+sudo apt-get update
+
 # Install the soft that we need:
 SOFT="variety clementine vlc nmap mysql-server"
 for pkg in $SOFT; do
