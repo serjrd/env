@@ -4,11 +4,12 @@
 # If it's the first time - run the 'console.sh' script first
 
 # Add some custom repositories:
-sudo add-apt-repository ppa:peterlevi/ppa
+sudo add-apt-repository ppa:peterlevi/ppa					# variety
+sudo add-apt-repository ppa:webupd8team/sublime-text-3		# sublime text 3
 sudo apt-get update
 
 # Install the soft that we need:
-SOFT="variety clementine vlc nmap mysql-server"
+SOFT="variety clementine vlc nmap mysql-server sublime-text-installer redis-server"
 for pkg in $SOFT; do
 	if dpkg -s "$pkg" >/dev/null 2>&1; then
 		echo "$pkg is installed. OK."
@@ -29,35 +30,3 @@ done
 
 # Copy the custom configs:
 echo "Fetch the config archive from your backup server manually :)"
-
-
-# # update zsh:
-# if [ ! -d ~/.oh-my-zsh ]; then
-# 	echo "Getting oh-my-zsh"
-# 	wget --no-check-certificate http://install.ohmyz.sh -O - | sh
-# fi
-
-# if [ ! -d ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting ]; then
-# 	echo "Fetching syntax-highlight"
-# 	(cd ~/.oh-my-zsh/custom/plugins && git clone git://github.com/zsh-users/zsh-syntax-highlighting.git)
-# fi
-
-# echo "Setting up the custom theme"
-# if [ ! -d ~/.oh-my-zsh/custom/themes ]; then
-# 	mkdir ~/.oh-my-zsh/custom/themes
-# fi
-# DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
-# cp $DIR/serjrd.zsh-theme ~/.oh-my-zsh/custom/themes
-
-# echo "Updating ~/.zshrc"
-# sed -ir 's/^[# ]*ZSH_THEME=.*$/ZSH_THEME="serjrd"/g' ~/.zshrc
-# sed -ir 's/^plugins=.*/plugins=(command-not-found git zsh-syntax-highlighting)/g' ~/.zshrc
-
-# if ! egrep "^alias" ~/.zshrc > /dev/null; then
-# 	echo "Adding aliases"
-# 	echo 'alias more="less"' >> ~/.zshrc
-# 	echo 'alias ack="ack-grep"' >> ~/.zshrc
-# fi
-
-# echo "Setting zsh to be the default shell"
-# sudo chsh -s /bin/zsh
