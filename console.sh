@@ -9,7 +9,7 @@ if ! dpkg -s "aptitude" >/dev/null 2>&1; then
 fi
 
 # Install the soft that we need:
-SOFT="nodejs npm git zsh ack-grep"
+SOFT="nodejs npm git zsh ack-grep autojump"
 for pkg in $SOFT; do
 	if dpkg -s "$pkg" >/dev/null 2>&1; then
 		echo "$pkg is installed. OK."
@@ -43,7 +43,7 @@ cp $DIR/serjrd.zsh-theme ~/.oh-my-zsh/custom/themes
 
 echo "Updating ~/.zshrc"
 sed -ir 's/^[# ]*ZSH_THEME=.*$/ZSH_THEME="serjrd"/g' ~/.zshrc
-sed -ir 's/^plugins=.*/plugins=(command-not-found git zsh-syntax-highlighting)/g' ~/.zshrc
+sed -ir 's/^plugins=.*/plugins=(command-not-found autojump git zsh-syntax-highlighting)/g' ~/.zshrc
 
 if ! egrep "^alias" ~/.zshrc > /dev/null; then
 	echo "Adding aliases"
