@@ -9,7 +9,7 @@ sudo add-apt-repository ppa:webupd8team/sublime-text-3		# sublime text 3
 sudo apt-get update
 
 # Install the soft that we need:
-SOFT="variety clementine vlc nmap mysql-server sublime-text-installer redis-server"
+SOFT="variety sshfs clementine vlc nmap mysql-server sublime-text-installer redis-server"
 for pkg in $SOFT; do
 	if dpkg -s "$pkg" >/dev/null 2>&1; then
 		echo "$pkg is installed. OK."
