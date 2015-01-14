@@ -9,7 +9,7 @@ if ! dpkg -s "aptitude" >/dev/null 2>&1; then
 fi
 
 # Install the soft that we need:
-SOFT="nodejs npm git zsh ack-grep autojump"
+SOFT="nodejs git zsh ack-grep autojump"
 for pkg in $SOFT; do
 	if dpkg -s "$pkg" >/dev/null 2>&1; then
 		echo "$pkg is installed. OK."
