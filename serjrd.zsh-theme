@@ -23,3 +23,4 @@ ZSH_THEME_GIT_PROMPT_DELETED="!"
 ZSH_THEME_GIT_PROMPT_UNMERGED="?"
 
 setopt histignorealldups
+setopt completealiases
