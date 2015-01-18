@@ -22,10 +22,7 @@ done
 
 # Install NPM packages that I need:
 echo "Installing npm packages..."
-$NPM="bower chai coffee-script grunt-cli gulp gyp js2coffee karma-cli mocha node-inspector npm protractor sails stylus"
-for pkg in $NPM; do
-	sudo npm -g install $pkg
-done
+sudo npm -g install npm bower chai coffee-script grunt-cli gulp gyp js2coffee karma-cli mocha node-inspector protractor sails stylus
 
 
 # Copy the custom configs:
