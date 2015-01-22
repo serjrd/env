@@ -19,11 +19,12 @@ for pkg in $SOFT; do
 	fi
 done
 
-
 # Install NPM packages that I need:
 echo "Installing npm packages..."
 sudo npm -g install npm bower chai coffee-script grunt-cli gulp gyp js2coffee karma-cli mocha node-inspector protractor sails stylus
 
-
 # Copy the custom configs:
 echo "Fetch the config archive from your backup server manually :)"
+
+# Add an alias for sublime
+echo 'alias s="subl"' >> ~/.zshrc
