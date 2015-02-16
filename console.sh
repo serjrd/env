@@ -56,4 +56,5 @@ if ! egrep "^alias" ~/.zshrc > /dev/null; then
 fi
 
 echo "Setting zsh to be the default shell"
-sudo chsh -s /bin/zsh
+USERNAME=${SUDO_USER:-$USER}
+sudo usermod -s /bin/zsh $USERNAME
