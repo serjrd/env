@@ -2,18 +2,12 @@
 
 # This script sets up the working environment to my liking
 
-# aptitude:
-if ! dpkg -s "aptitude" >/dev/null 2>&1; then
-	echo "Installing aptitude"
-	sudo apt-get install aptitude
-fi
-
 # Add some PPAs:
 sudo add-apt-repository ppa:chris-lea/node.js 
 sudo apt-get update
 
 # Install the soft that we need:
-SOFT="nodejs git zsh ack-grep autojump"
+SOFT="nodejs zsh ack-grep autojump"
 for pkg in $SOFT; do
 	if dpkg -s "$pkg" >/dev/null 2>&1; then
 		echo "$pkg is installed. OK."
