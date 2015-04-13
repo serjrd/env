@@ -10,6 +10,6 @@ if ! dpkg -s "aptitude" >/dev/null 2>&1; then
 fi
 
 sudo aptitude -y install git
-cd ~
-git clone https://github.com/serjrd/env.git
-~/env/console.sh
+git clone https://github.com/serjrd/env.git ~/env
+
+echo "You may now run: ~/env/console.sh"
