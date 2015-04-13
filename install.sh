@@ -9,7 +9,7 @@ if ! dpkg -s "aptitude" >/dev/null 2>&1; then
 	sudo apt-get install aptitude
 fi
 
-sudo aptitude install git
+sudo aptitude -y install git
 cd ~
 git clone https://github.com/serjrd/env.git
 ~/env/console.sh
