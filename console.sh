@@ -52,3 +52,6 @@ fi
 echo "Setting zsh to be the default shell"
 USERNAME=${SUDO_USER:-$USER}
 sudo usermod -s /bin/zsh $USERNAME
+
+echo "Generating 'ru' locale"
+/usr/sbin/locale-gen ru
