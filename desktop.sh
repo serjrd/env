@@ -21,7 +21,7 @@ done
 
 # Install NPM packages that I need:
 echo "Installing npm packages..."
-sudo npm -g install npm bower chai coffee-script grunt-cli gulp gyp js2coffee karma-cli mocha node-inspector protractor sails stylus
+sudo npm -g install npm bower chai coffee-script grunt-cli gulp gyp js2coffee karma-cli mocha node-inspector protractor sails stylus autoprefixer-stylus
 
 # Copy the custom configs:
 echo "Fetch the config archive from your backup server manually :)"
