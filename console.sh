@@ -3,7 +3,7 @@
 # This script sets up the working environment to my liking
 
 # Add some PPAs:
-sudo add-apt-repository ppa:chris-lea/node.js 
+wget https://deb.nodesource.com/setup_0.12 -O - | sudo bash -
 sudo apt-get update
 
 # Install the soft that we need:

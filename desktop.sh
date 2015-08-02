@@ -6,10 +6,14 @@
 # Add some custom repositories:
 sudo add-apt-repository ppa:peterlevi/ppa					# variety
 sudo add-apt-repository ppa:webupd8team/sublime-text-3		# sublime text 3
+# Add Google Chrome PPA
+wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+sudo bash -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
+
 sudo apt-get update
 
 # Install the soft that we need:
-SOFT="variety sshfs clementine vlc nmap mysql-server sublime-text-installer redis-server"
+SOFT="variety sshfs clementine vlc nmap mysql-server sublime-text-installer redis-server google-chrome-stable"
 for pkg in $SOFT; do
 	if dpkg -s "$pkg" >/dev/null 2>&1; then
 		echo "$pkg is installed. OK."
@@ -21,7 +25,7 @@ done
 
 # Install NPM packages that I need:
 echo "Installing npm packages..."
-sudo npm -g install npm bower chai coffee-script grunt-cli gulp gyp js2coffee karma-cli mocha node-inspector protractor sails stylus
+sudo npm -g install bower chai coffee-script grunt-cli gulp gyp js2coffee karma-cli mocha node-inspector protractor sails stylus
 
 # Copy the custom configs:
 echo "Fetch the config archive from your backup server manually :)"
