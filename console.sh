@@ -3,7 +3,7 @@
 # This script sets up the working environment to my liking
 
 # Add some PPAs:
-wget https://deb.nodesource.com/setup_0.12 -O - | sudo bash -
+curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
 sudo apt-get update
 
 # Install the soft that we need:
