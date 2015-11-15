@@ -18,7 +18,7 @@ for pkg in $SOFT; do
 done
 
 # nodejs -> node
-ln -s /usr/bin/nodejs /usr/bin/node
+# ln -s /usr/bin/nodejs /usr/bin/node
 
 
 # update zsh:
