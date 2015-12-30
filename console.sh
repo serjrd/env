@@ -7,7 +7,7 @@ curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
 sudo apt-get update
 
 # Install the soft that we need:
-SOFT="nodejs zsh ack-grep autojump"
+SOFT="nodejs zsh ack-grep autojump build-essential" 
 for pkg in $SOFT; do
 	if dpkg -s "$pkg" >/dev/null 2>&1; then
 		echo "$pkg is installed. OK."
@@ -16,10 +16,6 @@ for pkg in $SOFT; do
 		sudo aptitude install $pkg
 	fi
 done
-
-# nodejs -> node
-# ln -s /usr/bin/nodejs /usr/bin/node
-
 
 # update zsh:
 if [ ! -d ~/.oh-my-zsh ]; then
