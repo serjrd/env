@@ -4,6 +4,7 @@
 
 # Add some PPAs:
 curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+# wget -q https://deb.nodesource.com/setup_6.x -O - | sudo -E bash -
 sudo apt-get update
 
 # Install the soft that we need:
