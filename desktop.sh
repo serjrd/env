@@ -19,7 +19,7 @@ for pkg in $SOFT; do
 		echo "$pkg is installed. OK."
 	else
 		echo "$pkg not installed. Installing $pkg"
-		sudo aptitude install $pkg
+		sudo apt install $pkg
 	fi
 done
 
