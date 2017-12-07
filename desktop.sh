@@ -25,7 +25,7 @@ done
 
 # Install NPM packages that I need:
 echo "Installing npm packages..."
-sudo npm -g install bower chai coffee-script grunt-cli gulp gyp js2coffee karma-cli mocha node-inspector protractor sails stylus autoprefixer-stylus pm2
+sudo npm -g install bower chai coffeescript grunt-cli gulp gyp js2coffee karma-cli mocha node-inspector protractor sails stylus autoprefixer-stylus pm2
 
 # add pm2 completions to zsh:
 pm2 completion >> ~/.zshrc
