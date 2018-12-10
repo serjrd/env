@@ -3,7 +3,8 @@
 # This script sets up the working environment to my liking
 
 # Add some PPAs:
-curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+wget -q https://deb.nodesource.com/setup_10.x -O - | sudo -E bash -
+# curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
 # wget -q https://deb.nodesource.com/setup_6.x -O - | sudo -E bash -
 sudo apt-get update
 
