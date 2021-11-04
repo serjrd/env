@@ -13,7 +13,7 @@ sudo bash -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /
 sudo apt-get update
 
 # Install the soft that we need:
-SOFT="variety sshfs clementine vlc nmap mysql-server sublime-text-installer redis-server google-chrome-stable"
+SOFT="variety sshfs vlc nmap mysql-server redis-server google-chrome-stable"
 for pkg in $SOFT; do
 	if dpkg -s "$pkg" >/dev/null 2>&1; then
 		echo "$pkg is installed. OK."
@@ -25,13 +25,7 @@ done
 
 # Install NPM packages that I need:
 echo "Installing npm packages..."
-sudo npm -g install bower chai coffeescript grunt-cli gulp gyp js2coffee karma-cli mocha node-inspector protractor sails stylus autoprefixer-stylus pm2
+sudo npm -g install coffeescript grunt-cli gyp sails stylus pm2
 
 # add pm2 completions to zsh:
 pm2 completion >> ~/.zshrc
-
-# Copy the custom configs:
-echo "Fetch the config archive from your backup server manually :)"
-
-# Add an alias for sublime
-echo 'alias s="subl"' >> ~/.zshrc

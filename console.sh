@@ -3,14 +3,11 @@
 # This script sets up the working environment to my liking
 
 # Add some PPAs:
-curl -sL https://deb.nodesource.com/setup_14.x | sudo bash -
-# wget -q https://deb.nodesource.com/setup_10.x -O - | sudo -E bash -
-# curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
-# wget -q https://deb.nodesource.com/setup_6.x -O - | sudo -E bash -
+wget -q https://deb.nodesource.com/setup_16.x -O - | sudo -E bash -
 sudo apt update
 
 # Install the soft that we need:
-SOFT="nodejs zsh ack build-essential" 
+SOFT="nodejs zsh ack build-essential"
 for pkg in $SOFT; do
 	if dpkg -s "$pkg" >/dev/null 2>&1; then
 		echo "$pkg is installed. OK."
@@ -42,11 +39,7 @@ echo "Updating ~/.zshrc"
 sed -ir 's/^[# ]*ZSH_THEME=.*$/ZSH_THEME="serjrd"/g' ~/.zshrc
 sed -ir 's/^plugins=.*/plugins=(command-not-found git zsh-syntax-highlighting)/g' ~/.zshrc
 
-# if ! egrep "^alias" ~/.zshrc > /dev/null; then
-# 	echo "Adding aliases"
-# 	echo 'alias more="less"' >> ~/.zshrc
-# 	echo 'alias ack="ack-grep"' >> ~/.zshrc
-# fi
+echo 'alias more="less"' >> ~/.zshrc
 
 echo "Setting zsh to be the default shell"
 USERNAME=${SUDO_USER:-$USER}
